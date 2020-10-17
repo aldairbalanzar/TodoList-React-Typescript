@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import TodoForm from './components/TodoForm'
+import Todo from './components/TodoForm'
 import './App.css';
 
-function App() {
+interface ITodo {
+  id: string;
+  task: string;
+  completed: boolean;
+}
+
+const App: React.FC = () => {
+  const [todoList, setTodoList] = useState<ITodo[]>([])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+        {todoList.map((todo: ITodo) => {
+          <Todo todo={todo}/>
+        })}
+      </ul>
+      <TodoForm todoList={todoList} setTodoList={setTodoList}/>
     </div>
   );
 }
