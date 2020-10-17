@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TodoForm from './components/TodoForm'
-import Todo from './components/TodoForm'
+import Todo from './components/Todo'
 import './App.css';
 
 interface ITodo {
@@ -14,9 +14,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <ul>
-        {todoList.map((todo: ITodo) => {
+        {todoList.map((todo: ITodo) => (
           <Todo todo={todo}/>
-        })}
+        ))}
       </ul>
       <TodoForm todoList={todoList} setTodoList={setTodoList}/>
     </div>
