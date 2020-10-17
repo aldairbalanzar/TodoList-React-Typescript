@@ -26,6 +26,11 @@ const TodoForm: React.FC<IAppProps> = ({ todoList, setTodoList }) => {
            ...todoList,
            newTodo
        ])
+       setNewTodo({
+            id: '',
+            task: '',
+            completed: false
+       })
    };
 
 

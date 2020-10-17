@@ -1,17 +1,13 @@
 import React from 'react'
 
 interface IAppProps {
-    todo: {
-        id: string;
-        task: string;
-        completed: boolean;
-    }
+    todo: {id: string; task: string; completed: boolean;};
 }
 
-const Todo: React.FC<IAppProps> = ({ id, completed, task }) => {
+const Todo: React.FC<IAppProps> = ({ todo }) => {
     return (
-        <div key={id} className={completed ? 'completed' : ''}>
-            <p>{task}</p>
+        <div key={todo.id} className={todo.completed ? 'completed' : ''}>
+            <p>{todo.task}</p>
         </div>
     )
 }
