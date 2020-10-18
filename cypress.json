@@ -1,0 +1,8 @@
+{
+    "experimentalComponentTesting": true,
+    "testFolder": "src/cypress",
+    "integrationFolder": "src/cypress/integration",
+    "supportFile": "src/cypress/support/index.js",
+    "pluginsFile": "src/cypress/plugins/index.js",
+    "fixturesFolder": false
+}
