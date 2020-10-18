@@ -122,7 +122,6 @@ html {
   border: none;
   padding: 3% 5%;
 }
-
 .input-task:focus {
   outline: none;
   border-radius: 5px;
@@ -136,17 +135,24 @@ html {
   background-color: darkorchid;
   padding: 2% 3%;
   border-radius: 0 3px 3px 0;
+  box-shadow: -2px 1px 3px #534057;
   transition: .2s;
 }
-
 .button-submit:hover  {
-  background-color: orchid;
+  background-color: rgb(187, 84, 238);
+  box-shadow: -2px 1px 3px #896391;
   transition: .125s;
+  cursor: pointer;
+}
+.button-submit:focus  {
+  outline: none;
+  background-color: rgb(187, 84, 238);
+  box-shadow: -1px 1px 2px  #534057;
   cursor: pointer;
 }
 
 .todo-list {
-  width: 86%;
+  width: 100%;
   border-radius: 3px;
   display: flex;
   flex-wrap: wrap;
@@ -158,19 +164,22 @@ html {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 2% 3%;
+  justify-content: space-around;
+  padding: 5% 3%;
   transition: .275s;
 }
-
 .task-container:hover {
   background-color: snow;
-  transition: .07s;
+  transition: .025s;
 }
 
 .task {
   width: 80%;
-  transition: .35s;
+}
+
+.task-completed {
+  width: 80%;
+  text-decoration: line-through;
 }
 
 .delete-icon {
@@ -178,5 +187,7 @@ html {
 }
 .delete-icon:hover {
   color: tomato;
+  font-weight: bolder;
+  cursor: pointer;
   transition: .25s;
 }

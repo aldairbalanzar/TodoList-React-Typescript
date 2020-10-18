@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <TodoForm todoList={todoList} setTodoList={setTodoList}/>
         <ul className='todo-list'>
           {todoList.map((todo: ITodo) => (
-            <Todo todo={todo} todoList={todoList}/>
+            <Todo todo={todo} todoList={todoList} setTodoList={setTodoList} />
           ))}
         </ul>
       </div>
