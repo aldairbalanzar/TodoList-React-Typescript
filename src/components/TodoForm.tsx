@@ -35,20 +35,19 @@ const TodoForm: React.FC<IAppProps> = ({ todoList, setTodoList }) => {
 
 
     return (
-        <div>
-            <form>
-                <label htmlFor="todo">
-                    <input 
-                    type="text"
-                    onChange={handleChanges}
-                    name='task'
-                    value={newTodo.task}
-                    placeholder='Add new todo'
-                    />
-                    <button type='submit' onClick={handleSubmit}>Add</button>
-                </label>
-            </form>
-        </div>
+        <form className='form-todo'>
+            <label className='label-task' htmlFor="task">
+                <input 
+                className='input-task'
+                type="text"
+                onChange={handleChanges}
+                name='task'
+                value={newTodo.task}
+                placeholder='New Task'
+                />
+            </label>
+            <button className='button-submit' type='submit' onClick={handleSubmit}>Add</button>
+        </form>
     )
 }
 
