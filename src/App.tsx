@@ -13,12 +13,14 @@ const App: React.FC = () => {
   const [todoList, setTodoList] = useState<ITodo[]>([])
   return (
     <div className="App">
-      <ul>
-        {todoList.map((todo: ITodo) => (
-          <Todo todo={todo}/>
-        ))}
-      </ul>
-      <TodoForm todoList={todoList} setTodoList={setTodoList}/>
+      <div className='components-container'>
+        <TodoForm todoList={todoList} setTodoList={setTodoList}/>
+        <ul className='todo-list'>
+          {todoList.map((todo: ITodo) => (
+            <Todo todo={todo} todoList={todoList}/>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
