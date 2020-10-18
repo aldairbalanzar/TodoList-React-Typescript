@@ -24,7 +24,10 @@ const TodoForm: React.FC<IAppProps> = ({ todoList, setTodoList }) => {
        e.preventDefault()
        setTodoList([
            ...todoList,
-           newTodo
+           {
+               ...newTodo,
+               id: Math.random().toString()
+           }
        ])
        setNewTodo({
             id: '',
