@@ -19,7 +19,7 @@ const Todo: React.FC<IAppProps> = ({ todo, todoList, setTodoList }) => {
         setTodoList([
             ...newList
         ])
-    }
+    };
 
     const toggleCompleted = (todoId: string) => {
         const newList = todoList.map(todo => {
@@ -36,7 +36,7 @@ const Todo: React.FC<IAppProps> = ({ todo, todoList, setTodoList }) => {
         setTodoList([
             ...newList
         ])
-    }
+    };
 
     return (
         <div className='task-container' key={todo.id} >
@@ -49,6 +49,6 @@ const Todo: React.FC<IAppProps> = ({ todo, todoList, setTodoList }) => {
             <i className='delete-icon' onClick={() => {handleDelete(todo.id)}}>X</i>
         </div>
     )
-}
+};
 
 export default Todo

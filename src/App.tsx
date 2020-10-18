@@ -10,7 +10,16 @@ interface ITodo {
 }
 
 const App: React.FC = () => {
+
   const [todoList, setTodoList] = useState<ITodo[]>([])
+
+  const handleDeleteAllCompleted = () => {
+    let newList = todoList.filter(todo => todo.completed !== true)
+    setTodoList([
+      ...newList
+    ])
+  }
+
   return (
     <div className="App">
       <div className='components-container'>
@@ -20,6 +29,7 @@ const App: React.FC = () => {
             <Todo todo={todo} todoList={todoList} setTodoList={setTodoList} />
           ))}
         </ul>
+        <button className='button-clear-completed' onClick={handleDeleteAllCompleted}>Clear Completed</button>
       </div>
     </div>
   );
