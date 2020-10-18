@@ -47,7 +47,6 @@ html {
 }
 
 .App {
-  border: 2px solid red;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -103,7 +102,7 @@ html {
   background-color: lavenderblush;
   border-radius: 5px;
   margin: 1% auto;
-  padding: 1% 3% 3%;
+  padding: 1% 3% 2%;
 }
 
 .form-todo {
@@ -190,4 +189,28 @@ html {
   font-weight: bolder;
   cursor: pointer;
   transition: .25s;
+}
+
+.button-clear-completed {
+  border: none;
+  width: auto;
+  border: none;
+  color: white;
+  background-color: rgb(172, 6, 39);
+  padding: 2% 3%;
+  margin: 5% 0 0;
+  border-radius: 3px;
+  box-shadow: -2px 1px 3px #534057;
+  transition: .2s;
+}
+.button-clear-completed:hover {
+  cursor: pointer;
+  background-color: rgb(231, 21, 63);
+  transition: .125s;
+}
+.button-clear-completed:focus {
+  outline: none;
+  background-color: rgb(231, 21, 63);
+  box-shadow: -1px 1px 2px  #574040;
+  cursor: pointer;
 }
