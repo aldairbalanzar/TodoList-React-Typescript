@@ -1,9 +1,5 @@
-import React, { useState } from 'react'
-
-interface IAppProps {
-    todoList: {id: string; task: string; completed: boolean;}[];
-    setTodoList: ([]) => void;
-}
+import React, { useState } from 'react';
+import { IAppProps } from '../interfaces/AppInterfaces';
 
 const TodoForm: React.FC<IAppProps> = ({ todoList, setTodoList }) => {
    const [newTodo, setNewTodo] = useState({
@@ -13,29 +9,22 @@ const TodoForm: React.FC<IAppProps> = ({ todoList, setTodoList }) => {
    });
 
    const handleChanges = (e: React.FormEvent<HTMLInputElement>) => {
-       e.preventDefault()
+       e.preventDefault();
        setNewTodo({
            ...newTodo,
            [e.currentTarget.name]: e.currentTarget.value
-       })
+       });
    };
 
    const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
        e.preventDefault()
-       setTodoList([
-           ...todoList,
-           {
-               ...newTodo,
-               id: Math.random().toString()
-           }
-       ])
+       setTodoList([...todoList, {...newTodo, id: Math.random().toString()}]);
        setNewTodo({
             id: '',
             task: '',
             completed: false
-       })
+       });
    };
-
 
     return (
         <form className='form-todo'>
