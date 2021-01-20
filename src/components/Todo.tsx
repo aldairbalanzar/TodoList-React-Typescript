@@ -40,8 +40,7 @@ const Todo: React.FC<IAppProps> = ({ todo, todoList, setTodoList }) => {
 
     return (
         <div className='task-container' key={todo.id} >
-            <p 
-            className={todo.completed ? 'task-completed' : 'task'}
+            <p className={todo.completed ? 'task-completed' : 'task'}
             onClick={() => {toggleCompleted(todo.id)}}
             >
                 {todo.task}

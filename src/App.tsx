@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import TodoForm from './components/TodoForm'
-import Todo from './components/Todo'
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
+import { ITodo } from './interfaces/AppInterfaces';
 import './App.css';
-
-interface ITodo {
-  id: string;
-  task: string;
-  completed: boolean;
-}
 
 const App: React.FC = () => {
 
@@ -23,13 +18,11 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <div className='components-container'>
-        <TodoForm todoList={todoList} setTodoList={setTodoList}/>
-        <ul className='todo-list'>
-          {todoList.map((todo: ITodo) => (
-            <Todo todo={todo} todoList={todoList} setTodoList={setTodoList} />
-          ))}
-        </ul>
-        <button className='button-clear-completed' onClick={handleDeleteAllCompleted}>Clear Completed</button>
+        <TodoForm todoList={todoList} setTodoList={setTodoList} />
+        <TodoList todoList={todoList} setTodoList={setTodoList} />
+        <div className="button-container">
+          <button className='button-clear-completed' onClick={handleDeleteAllCompleted}>Clear Completed</button>
+        </div>
       </div>
     </div>
   );
